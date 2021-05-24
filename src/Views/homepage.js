@@ -5,7 +5,7 @@ import Pakistanmap from './Homepage/pakistanmap';
 
 export default function Homepage(){
     return(
-        <div>
+        <div style={{'backgroundColor': 'black'}}>
              {/* First component infoSection
                 2) 2-3 chaRTS load hon ge
                 3) pakistan map index hoga selectable hoga, 
