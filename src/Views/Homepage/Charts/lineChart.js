@@ -31,6 +31,7 @@ export default function LineChart(){
 <div style={{width:'30vw'}}>
 <h3 style={{textAlign:'center'}}>Food Scarcity index</h3> 
     <Line data={data} options={options} />
+    <h1>ada</h1>
 </div>
   );
 }
