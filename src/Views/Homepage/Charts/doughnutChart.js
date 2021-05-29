@@ -1,6 +1,11 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import {Card} from 'react-bootstrap';
 
+
+const options = {
+  maintainAspectRatio: false	// Don't maintain w/h ratio
+}
 const data = {
   labels:['Islamabad','Karachi', 'Lahore','Peshawer','Jhelum','Multan'],
     datasets: [
@@ -33,10 +38,26 @@ const data = {
 
 export default function DoughnutChart(){
     return(
-    <div style={{width:'30vw'}}>
-     <h3 style={{textAlign:'center'}}>Food Consumption Graph</h3>   
-      <Doughnut data={data} />
-    </div>
+      <Card style={{width:'33vw',height:'40vw'}}>
+     
+      <Card.Body>
+      <article style={{width:'28vw',height:'25vw'}}>
+      <Doughnut 
+     
+     data={data}
+     options={options}
+     />
+       
+       </article>
+        <Card.Title style={{textAlign:'center',color:'#3f3f44'}}>Food Consumption Graph</Card.Title>
+        <Card.Text style={{textAlign:'center',color:'#3f3f44'}}>
+          Some quick example text to build on the card title and make up the bulk of
+          the card's content.
+        </Card.Text>
+     
+      </Card.Body>
+    </Card>
+    
     
     );
 }

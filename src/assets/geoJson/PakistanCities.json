@@ -1,0 +1,67 @@
+[{
+        "city": "Lahore",
+        "city_ascii": "Lahore",
+        "lat": 31.5497,
+        "lng": 74.3436,
+        "country": "Pakistan",
+        "iso2": "PK",
+        "iso3": "PAK",
+        "admin_name": "Punjab",
+        "capital": "admin",
+        "population": 11021000,
+        "id": 1586801463
+    },
+    {
+
+        "city": "Karachi",
+        "city_ascii": "Karachi",
+        "lat": 24.86,
+        "lng": 67.01,
+        "country": "Pakistan",
+        "iso2": "PK",
+        "iso3": "PAK",
+        "admin_name": "Sindh",
+        "capital": "admin",
+        "population": 14835000,
+        "id": 1586129469
+    },
+    {
+        "city": "Islamabad",
+        "city_ascii": "Islamabad",
+        "lat": 33.6989,
+        "lng": 73.0369,
+        "country": "Pakistan",
+        "iso2": "PK",
+        "iso3": "PAK",
+        "admin_name": "Islāmābād",
+        "capital": "primary",
+        "population": 1365000,
+        "id": 1586306717
+    },
+    {
+        "city": "Quetta",
+        "city_ascii": "Quetta",
+        "lat": 30.192,
+        "lng": 67.007,
+        "country": "Pakistan",
+        "iso2": "PK",
+        "iso3": "PAK",
+        "admin_name": "Balochistān",
+        "capital": "admin",
+        "population": 1140000,
+        "id": 1586556108
+    },
+    {
+        "city": "Peshawar",
+        "city_ascii": "Peshawar",
+        "lat": 34,
+        "lng": 71.5,
+        "country": "Pakistan",
+        "iso2": "PK",
+        "iso3": "PAK",
+        "admin_name": "Khyber Pakhtunkhwa",
+        "capital": "admin",
+        "population": 1970042,
+        "id": 1586851102
+    }
+]

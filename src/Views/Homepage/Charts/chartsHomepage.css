@@ -1,0 +1,7 @@
+.chartResponsive {
+    @media (max-width: 30vw) {
+        .flex-container {
+            flex-direction: column;
+        }
+    }
+}
