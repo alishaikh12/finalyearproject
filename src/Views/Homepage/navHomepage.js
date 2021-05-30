@@ -7,8 +7,8 @@ export default function NavHomepage(){
   <Navbar.Brand href="#home"><img
         alt=""
         src={logo}
-        width="100"
-        height="100"
+        width="85"
+        height="65"
         className="d-inline-block align-top"
       />{' '}
     </Navbar.Brand>
@@ -18,7 +18,7 @@ export default function NavHomepage(){
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-        <Nav.Link href="#home" disabled style={{fontSize:'20px'}}>HomePage</Nav.Link>
+        <Nav.Link href="#home" disabled style={{fontSize:'20px'}}>Home</Nav.Link>
         <Nav.Link href="#link" style={{fontSize:'20px'}}>Search Location</Nav.Link>
         <NavDropdown title="Estimate" id="basic-nav-dropdown" style={{fontSize:'20px'}}>
             <NavDropdown.Item href="#action/3.1">Food Consumption</NavDropdown.Item>
@@ -26,6 +26,10 @@ export default function NavHomepage(){
             <NavDropdown.Item href="#action/3.3">Population Growth</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">Food Scarcity</NavDropdown.Item>
+        </NavDropdown>
+        <NavDropdown title="Solution" id="basic-nav-dropdown" style={{fontSize:'20px'}}>
+                  <NavDropdown.Item href="#action/3.1">Water Check</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">Fertility Check</NavDropdown.Item>                
         </NavDropdown>
     </Nav>
   </Navbar.Collapse>

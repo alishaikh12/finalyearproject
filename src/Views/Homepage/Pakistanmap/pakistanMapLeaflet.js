@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup, GeoJSON, Polygon } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, GeoJSON, Polygon,Circle } from 'react-leaflet'
 import Province from '../../../assets/geoJson/Province.json'
 
 
@@ -11,10 +11,11 @@ export default function PakistanMap(){
     //     }
     // };
 
+
     
     return(
         <div style={{padding:'80px'}}>
-        <MapContainer center={[30.3753, 69.3451]} zoom={5.4} scrollWheelZoom={true}>
+        <MapContainer center={[30.964750, 70.939934]} zoom={5.4} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -23,8 +24,7 @@ export default function PakistanMap(){
 
         {
           Province.features.map((item) => (
-            // <Polygon pathOptions={{color: 'black', fillColor:'red'}} positions={item.geometry.coordinates}/>
-             <GeoJSON data={item}>
+              <GeoJSON data={item}>
                <Popup>
                  <b>Name</b>
                  <br/>
@@ -34,6 +34,9 @@ export default function PakistanMap(){
                  <br/>
                  {item.population}
                </Popup>
+               <Circle center={[30.964750, 70.939934]} pathOptions={{color:'blue',fillColor:'azure'}} radius={50000} />
+               
+           
                </GeoJSON>
           ))
         }

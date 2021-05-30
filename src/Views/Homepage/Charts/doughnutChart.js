@@ -1,6 +1,6 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import {Card} from 'react-bootstrap';
+import {Card,Button} from 'react-bootstrap';
 
 
 const options = {
@@ -37,24 +37,31 @@ const data = {
   
 
 export default function DoughnutChart(){
+  const [show,setShow] = useState(false);
     return(
-      <Card style={{width:'33vw',height:'40vw'}}>
+      <Card style={{width:'33vw',height:'40vw',marginLeft:'5px',marginRight:'5px'}}>
      
       <Card.Body>
-      <article style={{width:'28vw',height:'25vw'}}>
+{
+    show?
+    <article style={{width:'28vw',height:'25vw'}}>
       <Doughnut 
      
      data={data}
      options={options}
      />
        
-       </article>
-        <Card.Title style={{textAlign:'center',color:'#3f3f44'}}>Food Consumption Graph</Card.Title>
+    </article>
+    :<article style={{width:'28vw',height:'25vw'}}>
+      <h3 style={{textAlign:'center',color:'#3f3f44'}}>No data to show</h3>
+    </article>
+}
+       <Card.Title style={{textAlign:'center',color:'#3f3f44'}}>Food Consumption Graph</Card.Title>
         <Card.Text style={{textAlign:'center',color:'#3f3f44'}}>
-          Some quick example text to build on the card title and make up the bulk of
-          the card's content.
+        The chart will render after clicking the button bellow. This button will create a Doughnut chart of Food consumption of Pakistans Major Cities
         </Card.Text>
-     
+        <Button onClick={()=>setShow(!show)} variant="secondary" style={{marginLeft:'10vw'}}>Toggle Chart</Button>
+ 
       </Card.Body>
     </Card>
     
