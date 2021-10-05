@@ -1,5 +1,6 @@
 import React from 'react';
 import {Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 import logo from '../../assets/Logo.png'
 export default function NavHomepage(){
     return(
@@ -19,7 +20,7 @@ export default function NavHomepage(){
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
         <Nav.Link href="#home" disabled style={{fontSize:'20px'}}>Home</Nav.Link>
-        <Nav.Link href="#link" style={{fontSize:'20px'}}>Search Location</Nav.Link>
+        <Nav.Link href="#link" style={{fontSize:'20px'}}><Link to={'/search'}>Search Location</Link></Nav.Link>
         <NavDropdown title="Estimate" id="basic-nav-dropdown" style={{fontSize:'20px'}}>
             <NavDropdown.Item href="#action/3.1">Food Consumption</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Food Production</NavDropdown.Item>
@@ -27,10 +28,8 @@ export default function NavHomepage(){
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">Food Scarcity</NavDropdown.Item>
         </NavDropdown>
-        <NavDropdown title="Solution" id="basic-nav-dropdown" style={{fontSize:'20px'}}>
-                  <NavDropdown.Item href="#action/3.1">Water Check</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Fertility Check</NavDropdown.Item>                
-        </NavDropdown>
+        <Nav.Link href="#link" style={{fontSize:'20px'}}><Link to={'/solution'}>Solution</Link></Nav.Link>
+
     </Nav>
   </Navbar.Collapse>
 </Navbar>
