@@ -19,8 +19,8 @@ export default function NavHomepage(){
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-        <Nav.Link href="#home" disabled style={{fontSize:'20px'}}>Home</Nav.Link>
-        <Nav.Link href="#link" style={{fontSize:'20px'}}><Link to={'/search'}>Search Location</Link></Nav.Link>
+        <Nav.Link href="/" disabled style={{fontSize:'20px'}}>Home</Nav.Link>
+        <Nav.Link href="/search" style={{fontSize:'20px'}}>Current Status</Nav.Link>
         <NavDropdown title="Estimate" id="basic-nav-dropdown" style={{fontSize:'20px'}}>
             <NavDropdown.Item href="#action/3.1">Food Consumption</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Food Production</NavDropdown.Item>
@@ -28,7 +28,7 @@ export default function NavHomepage(){
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">Food Scarcity</NavDropdown.Item>
         </NavDropdown>
-        <Nav.Link href="#link" style={{fontSize:'20px'}}><Link to={'/solution'}>Solution</Link></Nav.Link>
+        <Nav.Link href="/solution" style={{fontSize:'20px'}}>Solution</Nav.Link>
 
     </Nav>
   </Navbar.Collapse>

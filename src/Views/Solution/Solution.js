@@ -1,60 +1,121 @@
-import React,{useRef,useEffect} from 'react';
+import React from 'react';
+import { MapContainer,TileLayer,GeoJSON,Popup  } from 'react-leaflet';
+import "leaflet/dist/leaflet.css";
 
-import { loadModules } from 'esri-loader';
+import FertileLand from '../../assets/geoJson/FertileLand.json'
+import Waterbodies  from '../../assets/geoJson/water.json';
+import Pakistan from '../../assets/geoJson/Pakistan.json'
+import NavHomePage from '../Homepage/navHomepage'
+const demarcatedCountry =  () => {
+    return(Pakistan.features.map((Country)=>{
+            return(
+                <GeoJSON
+                    data={Country}
+                    style={Countrystyle}
+                >
+
+                </GeoJSON>
+            );
+    }))
+}
+
+const Countrystyle = () => ({
+    color: "#a7a7a7",
+    opacity: 0.6,
+    weight: 2,
+    fill: true,
+    fillColor: "#a7a7a7",
+    fillOpacity: 0.3,
+    })
 
 
 
-import geojsonurl  from '../../assets/geoJson/water.geojson';
+const Waterstyle = () => ({
+    color: "#084f49",
+    opacity: 0.6,
+    weight: 2,
+    fill: true,
+    fillColor: "#73c9c2",
+    fillOpacity: 0.3,
+    })
+
+const fertileLand = () => {
+    return(FertileLand.features.map((fertile)=>{
+        return(
+            <GeoJSON
+            data={fertile}
+            style={Fertilestyle}
+            >
+
+            </GeoJSON>
+        )
+    }))
+}
+const Fertilestyle = () => ({
+    color: "#33ed00",
+    opacity: 0.6,
+    weight: 2,
+    fill: true,
+    fillColor: "#89ff69",
+    fillOpacity: 0.3,
+    })
+
+function handleWater(){
+        return(Waterbodies.features.map((bodies)=>{
+            return(
+                 <GeoJSON
+                     data={bodies}
+                     style={Waterstyle}
+                 >
+    
+    
+                </GeoJSON>
+            )
+    }))
+        
+}
+
+
 
 function Solution() {
     
-    const MapEl = useRef(null)
+    
 
-    useEffect(
-        ()=>{
-        let view;
 
-        loadModules(["esri/views/MapView", "esri/WebMap","esri/layers/GeoJSONLayer"],{
-            css:true
-        }).then(
-            ([MapView,WebMap,GeoJSONLayer])=>{
-            const webmap = new WebMap({
-                basemap:'topo-vector',
-
-            })  
-            view = new MapView({
-                map:webmap,
-                center:[70.939934,30.964750],
-                zoom:5,
-                container:MapEl.current
-            })
-            const geoJsonLayer = new GeoJSONLayer({
-                url: geojsonurl,
-            })
-
-            webmap.add(geoJsonLayer)
-
-            //  const GeoJson = new GeoJSONLayer({
-            //      url: "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/f7500b69-d711-454c-89a9-14a90bed7f18/pakistan.geojson?AWSAccessKeyId=AKIAXYC32WNARK756OUG&Expires=1628758884&Signature=gcHtAI7QmoAIXd%2BOHExlnumvRBI%3D"
-            //  });
-
-            //  webmap.add(GeoJson)
+    
+    return(
+        <div style={{ backgroundColor:'#f7f7f7'}}>
+        <NavHomePage></NavHomePage>
             
-        })
-        return()=>{
-            if(!!view){
-                view.destroy()
-                view = null       
-            }
-        }
-    
-    
-    })
-    
-    return (
-        <div style={{height:800}} ref={MapEl}>
+            <div style={{paddingLeft: '10vh',paddingRight:'10vh',paddingBottom:'10vh', justifyContent:'center'}}>
+        
+            <MapContainer
+        center={[30.964750, 70.939934]}
+        zoom={5}
+        style={{width:"100%", 
+          height:"80vh"}}
+       
+        
+        >
+
+                    <TileLayer
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+       
+        />
+
+        {demarcatedCountry()}
+        {handleWater()}
+        {fertileLand()}
+    </MapContainer>
+
+            </div>
             
+
         </div>
+        
+
+
     );
 };
 
