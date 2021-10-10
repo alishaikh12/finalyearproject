@@ -1,25 +1,19 @@
-
-import './App.css';
-import SearchLocation from './Views/SearchLocation/searchLocation'
-import Homepage from './Views/homepage.js'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Solution from './Views/Solution/Solution'
+import "./App.css";
+import SearchLocation from "./Views/SearchLocation/searchLocation";
+import Homepage from "./Views/homepage.js";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Solution from "./Views/Solution/Solution";
+import FoodConsumptionCalculator from "./Views/Estimate/Food Consumption/FoodConsumptionCalculator";
 
 function App() {
   return (
-    <div >
+    <div>
       <Router>
         <Switch>
-
-        <Route path={'/solution'} component={Solution} ></Route>
-        <Route path={'/search'} component={SearchLocation}></Route>
-        <Route path={'/'} component={Homepage}>
-
-        </Route>
-
-
+          <Route path={"/solution"} component={Solution}></Route>
+          <Route path={"/search"} component={SearchLocation}></Route>
+          <Route path={"/"} component={FoodConsumptionCalculator}></Route>
         </Switch>
-      
       </Router>
     </div>
   );

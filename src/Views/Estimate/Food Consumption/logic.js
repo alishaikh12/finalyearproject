@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 
-const logic = (props) => {
-    
-    //props.kg = 200;
-    //const cal = props.kg * 3510;
-    //props.population = 20000;
-    const quintile = 5;
-    const consumptionPerQuintile = 240;
-    const HH = Math.floor(props.population / quintile);
-    
+function Logic({ population }) {
+  //props.kg = 200;
+  //const cal = props.kg * 3510;
+  //props.population = 20000;
+  console.log(population);
+  const quintile = 5;
+  const consumptionPerQuintile = 240;
+  const HH = Math.floor(population / quintile);
+
+  const [result, setResult] = useState(0);
+  useEffect(() => {
     const ConsumptionPerAnnum = () => {
-        return (HH * consumptionPerQuintile)
-    }
-    return (
-        <h2>{ConsumptionPerAnnum()}</h2>
-      
-    );
-};
+      const res = HH * consumptionPerQuintile;
+      setResult(res);
+    };
+    ConsumptionPerAnnum();
+  }, []);
 
-export default logic;
+  return <h2>{result}</h2>;
+}
+
+export default Logic;
